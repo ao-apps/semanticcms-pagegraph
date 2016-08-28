@@ -33,7 +33,7 @@ public class PageGraphContextListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		semanticCMS.addCssLink("/semanticcms-pagegraph/style.css");
+		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
 		semanticCMS.addScript("d3js", "/webjars/d3js/3.5.17/d3.min.js");
 		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.4.10/dagre-d3.min.js");
 		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
