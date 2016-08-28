@@ -22,17 +22,17 @@
  */
 
 /* Exists for page outlines, but we don't want to see it */
-#docsPageDagHeader {
+#semanticcms-pagegraph-header {
 	display: none;
 }
-#docsPageDag {
+#semanticcms-pagegraph-dag {
 	/* This font stays centered better while scaling */
 	font: 300 14px 'Helvetica Neue', Helvetica;
 }
-g.docs-page-dag-this-page > rect {
+g.semanticcms-pagegraph-this-page > rect {
 	fill: #ffff00;
 }
-g.docs-page-dag-page-disabled > rect {
+g.semanticcms-pagegraph-page-disabled > rect {
 	fill: #c0c0c0;
 }
 .node rect {

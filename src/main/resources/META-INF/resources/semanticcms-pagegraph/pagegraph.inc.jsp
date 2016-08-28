@@ -1,24 +1,24 @@
 <%--
-  semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-  Copyright (C) 2016  AO Industries, Inc.
-      support@aoindustries.com
-      7262 Bull Pen Cir
-      Mobile, AL 36695
+semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
+Copyright (C) 2016  AO Industries, Inc.
+	support@aoindustries.com
+	7262 Bull Pen Cir
+	Mobile, AL 36695
 
-  This file is part of semanticcms-pagegraph.
+This file is part of semanticcms-pagegraph.
 
-  semanticcms-pagegraph is free software: you can redistribute it and/or modify
-  it under the terms of the GNU Lesser General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+semanticcms-pagegraph is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-  semanticcms-pagegraph is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU Lesser General Public License for more details.
+semanticcms-pagegraph is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
 
-  You should have received a copy of the GNU Lesser General Public License
-  along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU Lesser General Public License
+along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 --%>
 <%@ page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" %>
 <%@ page import="com.semanticcms.core.model.Page" %>
@@ -196,14 +196,14 @@ Arguments:
 	// To reduce the number of passes through time-consuming operations, resulting classes are stored here
 	pageContext.setAttribute("classByPage", new HashMap<Page,String>());
 %>
-<nav id="docsPageDag">
-	<h1 id="docsPageDagHeader">Page Tree<%-- Yeah, I know it's a DAG --%></h1>
+<nav id="semanticcms-pagegraph-dag">
+	<h1 id="semanticcms-pagegraph-header">Page Tree<%-- Yeah, I know it's a DAG --%></h1>
 	<%--
 		Mobile version of Chrome does not process contents of noscript enough to get access to the href,
 		so we have to include the elements here then immediately hide them when scripting is enabled.
 		This is, in effect, an emulation of <noscript>
 	--%>
-	<div id="docsPageDag-noscript">
+	<div id="semanticcms-pagegraph-noscript">
 		<%-- User experience for when JavaScript is disabled --%>
 		<%-- TODO: Can parts of this be legit noscript? --%>
 		<%-- Note: The scripts below pickup the URLs from these links, this is so rewritten links are used after export --%>
@@ -215,10 +215,10 @@ Arguments:
 				<c:set var="dagPage" value="${dagEntry.key}" />
 				<c:choose>
 					<c:when test="${dagPage == page}">
-						<c:set var="nodeCssClass" value="docs-page-dag-this-page" />
+						<c:set var="nodeCssClass" value="semanticcms-pagegraph-this-page" />
 					</c:when>
 					<c:when test="${!p:isViewApplicable(view, dagPage)}">
-						<c:set var="nodeCssClass" value="docs-page-dag-page-disabled" />
+						<c:set var="nodeCssClass" value="semanticcms-pagegraph-page-disabled" />
 					</c:when>
 					<c:otherwise>
 						<c:set var="nodeCssClass" value="" />
@@ -230,9 +230,9 @@ Arguments:
 					Map testMap = (Map)pageContext.getAttribute("classByPage");
 					testMap.put(pageContext.getAttribute("dagPage"), pageContext.getAttribute("nodeCssClass"));
 				%>
-				<c:if test="${nodeCssClass != 'docs-page-dag-this-page' && nodeCssClass != 'docs-page-dag-page-disabled'}">
+				<c:if test="${nodeCssClass != 'semanticcms-pagegraph-this-page' && nodeCssClass != 'semanticcms-pagegraph-page-disabled'}">
 					<li><ao:a
-						id="docs-dag-link-${dagIndexes[dagPage]}"
+						id="semanticcms-pagegraph-link-${dagIndexes[dagPage]}"
 						rel="nofollow"
 						href="${dagPage.pageRef.servletPath}"
 						param.view="${view.isDefault() ? null : view.name}"
@@ -246,7 +246,7 @@ Arguments:
 	</div>
 	<ao:script>
 		// Emulate noscript
-		document.getElementById("docsPageDag-noscript").style.display = "none";
+		document.getElementById("semanticcms-pagegraph-noscript").style.display = "none";
 
 		try {
 			// Create a new directed graph
@@ -264,7 +264,7 @@ Arguments:
 				<c:set var="nodeCssClass" value="${classByPage[dagPage]}" />
 				<c:choose>
 					<%-- Non-clickable nodes --%>
-					<c:when test="${nodeCssClass == 'docs-page-dag-this-page' || nodeCssClass == 'docs-page-dag-page-disabled'}">
+					<c:when test="${nodeCssClass == 'semanticcms-pagegraph-this-page' || nodeCssClass == 'semanticcms-pagegraph-page-disabled'}">
 						g.setNode(
 							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
 							{
@@ -279,7 +279,7 @@ Arguments:
 							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
 							semanticcms_pagegraph.createDagNode(
 								<ao:out value="${dagPage.shortTitle}" />,
-								document.getElementById('docs-dag-link-' + <ao:out value="${dagIndexes[dagPage]}" />).getAttribute('href'),
+								document.getElementById('semanticcms-pagegraph-link-' + <ao:out value="${dagIndexes[dagPage]}" />).getAttribute('href'),
 								<ao:out value="${nodeCssClass}" />
 							)
 						);
@@ -310,7 +310,7 @@ Arguments:
 			</c:forEach>
 
 			// See https://vaadin.com/forum#!/thread/11835698
-			var svg = d3.select(document.getElementById("docsPageDag")).append("svg"), // .attr("width", 480).attr("height", 300),
+			var svg = d3.select(document.getElementById("semanticcms-pagegraph-dag")).append("svg"), // .attr("width", 480).attr("height", 300),
 				svgGroup = svg.append("g");
 
 			// Create the renderer
