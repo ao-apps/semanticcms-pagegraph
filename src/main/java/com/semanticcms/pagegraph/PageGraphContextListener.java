@@ -35,7 +35,10 @@ public class PageGraphContextListener implements ServletContextListener {
 		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
 		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
 		semanticCMS.addScript("d3js", "/webjars/d3js/3.5.17/d3.min.js");
-		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.4.10/dagre-d3.min.js");
+		// webjars is only version 0.4.10, which is not working on Android, manually installed version 0.4.17
+		// TODO: Switch back to webjars once newer version packaged
+		//semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.4.10/dagre-d3.min.js");
+		semanticCMS.addScript("dagre-d3", "/semanticcms-pagegraph/dagre-d3-0.4.17.min.js");
 		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
 	}
 
