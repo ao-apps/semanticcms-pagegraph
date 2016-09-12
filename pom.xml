@@ -38,6 +38,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 	<name>SemanticCMS PageGraph</name>
 	<url>https://semanticcms.com/pagegraph/</url>
 	<description>SemanticCMS component to view a graph of the current page and related pages.</description>
+	<inceptionYear>2016</inceptionYear>
 
 	<scm>
 		<connection>scm:git:git://github.com/aoindustries/semanticcms-pagegraph.git</connection>
