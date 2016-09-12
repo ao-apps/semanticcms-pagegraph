@@ -35,7 +35,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 
 <%@ taglib prefix="ao" uri="http://aoindustries.com/ao-taglib" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="p" uri="https://semanticcms.com/semanticcms-core-taglib" %>
+<%@ taglib prefix="core" uri="https://semanticcms.com/core/taglib/" %>
 
 <%--
 Adds the page DAG SVG.
@@ -217,7 +217,7 @@ Arguments:
 					<c:when test="${dagPage == page}">
 						<c:set var="nodeCssClass" value="semanticcms-pagegraph-this-page" />
 					</c:when>
-					<c:when test="${!p:isViewApplicable(view, dagPage)}">
+					<c:when test="${!core:isViewApplicable(view, dagPage)}">
 						<c:set var="nodeCssClass" value="semanticcms-pagegraph-page-disabled" />
 					</c:when>
 					<c:otherwise>
@@ -237,7 +237,7 @@ Arguments:
 						href="${dagPage.pageRef.servletPath}"
 						param.view="${view.isDefault() ? null : view.name}"
 					>
-						<ao:params values="${p:getViewLinkParams(view, dagPage)}" />
+						<ao:params values="${core:getViewLinkParams(view, dagPage)}" />
 						<ao:out value="${dagPage.title}" />
 					</ao:a></li><%-- shortTitle once relationship clear --%>
 				</c:if>
