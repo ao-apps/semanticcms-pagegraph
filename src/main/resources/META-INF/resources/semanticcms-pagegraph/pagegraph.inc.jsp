@@ -75,7 +75,7 @@ Arguments:
 						request,
 						response,
 						parentRef,
-						CaptureLevel.BODY
+						CaptureLevel.PAGE
 					);
 					Set<Page> siblings = dag.get(parent);
 					if(siblings == null) {
@@ -115,7 +115,7 @@ Arguments:
 					request,
 					response,
 					childRef,
-					CaptureLevel.BODY
+					CaptureLevel.PAGE
 				);
 				addAllParents(
 					servletContext,
@@ -137,7 +137,7 @@ Arguments:
 						request,
 						response,
 						parentRef,
-						CaptureLevel.BODY
+						CaptureLevel.PAGE
 					);
 					for(PageRef siblingRef : parent.getChildPages()) {
 						// Skip missing books
@@ -147,7 +147,7 @@ Arguments:
 								request,
 								response,
 								siblingRef,
-								CaptureLevel.BODY
+								CaptureLevel.PAGE
 							);
 							addAllParents(
 								servletContext,
