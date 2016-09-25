@@ -213,17 +213,17 @@ Arguments:
 		<ul>
 			<c:forEach var="dagEntry" items="${dag}">
 				<c:set var="dagPage" value="${dagEntry.key}" />
-				<c:choose>
-					<c:when test="${dagPage == page}">
+				<ao:choose>
+					<ao:when test="#{dagPage == page}">
 						<c:set var="nodeCssClass" value="semanticcms-pagegraph-this-page" />
-					</c:when>
-					<c:when test="${!core:isViewApplicable(view, dagPage)}">
+					</ao:when>
+					<ao:when test="#{!core:isViewApplicable(view, dagPage)}">
 						<c:set var="nodeCssClass" value="semanticcms-pagegraph-page-disabled" />
-					</c:when>
-					<c:otherwise>
+					</ao:when>
+					<ao:otherwise>
 						<c:set var="nodeCssClass" value="" />
-					</c:otherwise>
-				</c:choose>
+					</ao:otherwise>
+				</ao:choose>
 				<%-- Doesn't work, could be due to object as key, movin' on: <c:set target="${classByPage}" property="${dagPage}" value="${nodeCssClass}" />--%>
 				<%
 					// Life is too short to be perfect, doing what works:
@@ -262,9 +262,9 @@ Arguments:
 			<c:forEach var="dagEntry" items="${dag}">
 				<c:set var="dagPage" value="${dagEntry.key}" />
 				<c:set var="nodeCssClass" value="${classByPage[dagPage]}" />
-				<c:choose>
+				<ao:choose>
 					<%-- Non-clickable nodes --%>
-					<c:when test="${nodeCssClass == 'semanticcms-pagegraph-this-page' || nodeCssClass == 'semanticcms-pagegraph-page-disabled'}">
+					<ao:when test="#{nodeCssClass == 'semanticcms-pagegraph-this-page' || nodeCssClass == 'semanticcms-pagegraph-page-disabled'}">
 						g.setNode(
 							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
 							{
@@ -272,9 +272,9 @@ Arguments:
 								class: <ao:out value="${nodeCssClass}" />
 							}
 						);
-					</c:when>
+					</ao:when>
 					<%-- Clickable nodes --%>
-					<c:otherwise>
+					<ao:otherwise>
 						g.setNode(
 							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
 							semanticcms_pagegraph.createDagNode(
@@ -283,8 +283,8 @@ Arguments:
 								<ao:out value="${nodeCssClass}" />
 							)
 						);
-					</c:otherwise>
-				</c:choose>
+					</ao:otherwise>
+				</ao:choose>
 			</c:forEach>
 
 			// Round the corners of the nodes
