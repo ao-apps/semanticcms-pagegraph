@@ -20,7 +20,7 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 --%>
-<%@ page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" %>
+<%@ page language="java" pageEncoding="UTF-8" session="false" %>
 <%@ page import="com.semanticcms.core.model.Page" %>
 <%@ page import="com.semanticcms.core.model.PageRef" %>
 <%@ page import="com.semanticcms.core.servlet.CapturePage" %>
