@@ -60,7 +60,6 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 								<links>
 									<link>http://docs.oracle.com/javaee/6/api/</link>
 									<link>https://www.aoindustries.com/docs/ao-taglib/</link>
-									<link>https://semanticcms.com/core/model/apidocs/</link>
 									<link>https://semanticcms.com/core/servlet/apidocs/</link>
 									<link>https://semanticcms.com/core/taglib/apidocs/</link>
 								</links>
