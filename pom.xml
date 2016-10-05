@@ -130,11 +130,6 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-core-model</artifactId>
-			<version>1.7.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-servlet</artifactId>
 			<version>1.8.0</version>
 		</dependency>
