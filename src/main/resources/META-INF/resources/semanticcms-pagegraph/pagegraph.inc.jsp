@@ -21,10 +21,13 @@ You should have received a copy of the GNU Lesser General Public License
 along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 --%>
 <%@ page language="java" pageEncoding="UTF-8" session="false" %>
+<%@ page import="com.semanticcms.core.model.ChildRef" %>
 <%@ page import="com.semanticcms.core.model.Page" %>
 <%@ page import="com.semanticcms.core.model.PageRef" %>
+<%@ page import="com.semanticcms.core.model.ParentRef" %>
 <%@ page import="com.semanticcms.core.servlet.CapturePage" %>
 <%@ page import="com.semanticcms.core.servlet.CaptureLevel" %>
+<%@ page import="com.semanticcms.core.servlet.PageUtils" %>
 <%@ page import="java.io.IOException" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.HashSet" %>
@@ -67,14 +70,15 @@ Arguments:
 		if(visited.add(pageRef)) {
 			// Default to empty children, to make sure leaf pages are in the dag
 			if(!dag.containsKey(page)) dag.put(page, new LinkedHashSet<Page>());
-			for(PageRef parentRef : page.getParentPages()) {
+			for(ParentRef parentRef : page.getParentRefs()) {
+				PageRef parentPageRef = parentRef.getPageRef();
 				// Skip missing books
-				if(parentRef.getBook() != null) {
+				if(parentPageRef.getBook() != null) {
 					Page parent = CapturePage.capturePage(
 						servletContext,
 						request,
 						response,
-						parentRef,
+						parentPageRef,
 						CaptureLevel.META
 					);
 					Set<Page> siblings = dag.get(parent);
@@ -106,15 +110,16 @@ Arguments:
 		Set<PageRef> visited = new HashSet<PageRef>();
 		// Add children
 		boolean hasChild = false;
-		for(PageRef childRef : page.getChildPages()) {
+		for(ChildRef childRef : page.getChildRefs()) {
+			PageRef childPageRef = childRef.getPageRef();
 			// Skip missing books
-			if(childRef.getBook() != null) {
+			if(childPageRef.getBook() != null) {
 				hasChild = true;
 				Page child = CapturePage.capturePage(
 					servletContext,
 					request,
 					response,
-					childRef,
+					childPageRef,
 					CaptureLevel.META
 				);
 				addAllParents(
@@ -129,24 +134,26 @@ Arguments:
 		}
 		if(!hasChild) {
 			// Add all siblings when have no children
-			for(PageRef parentRef : page.getParentPages()) {
+			for(ParentRef parentRef : page.getParentRefs()) {
+				PageRef parentPageRef = parentRef.getPageRef();
 				// Skip missing books
-				if(parentRef.getBook() != null) {
+				if(parentPageRef.getBook() != null) {
 					Page parent = CapturePage.capturePage(
 						servletContext,
 						request,
 						response,
-						parentRef,
+						parentPageRef,
 						CaptureLevel.META
 					);
-					for(PageRef siblingRef : parent.getChildPages()) {
+					for(ChildRef siblingRef : parent.getChildRefs()) {
+						PageRef siblingPageRef = siblingRef.getPageRef();
 						// Skip missing books
-						if(siblingRef.getBook() != null) {
+						if(siblingPageRef.getBook() != null) {
 							Page sibling = CapturePage.capturePage(
 								servletContext,
 								request,
 								response,
-								siblingRef,
+								siblingPageRef,
 								CaptureLevel.META
 							);
 							addAllParents(
@@ -184,10 +191,10 @@ Arguments:
 	);
 
 	// Assign integer IDs to pages
-	Map<Page,Integer> dagIndexes = new HashMap<Page,Integer>(dag.size()*4/3 + 1);
+	Map<PageRef,Integer> dagIndexes = new HashMap<PageRef,Integer>(dag.size()*4/3 + 1);
 	int index = 0;
 	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
-		dagIndexes.put(entry.getKey(), index++);
+		dagIndexes.put(entry.getKey().getPageRef(), index++);
 	}
 
 	pageContext.setAttribute("dag", dag);
@@ -195,6 +202,29 @@ Arguments:
 
 	// To reduce the number of passes through time-consuming operations, resulting classes are stored here
 	pageContext.setAttribute("classByPage", new HashMap<Page,String>());
+
+	// Finds the effective short title per node.
+	// If the node only has one parent in the DAG, will use that parent as context.
+	// Otherwise uses shortTitle on the node itself.
+	Map<Page,String> shortTitles = new HashMap<Page,String>(dag.size()*4/3 + 1);
+	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
+		Page node = entry.getKey();
+		PageRef matchedParentPageRef = null;
+		for(ParentRef parentRef : node.getParentRefs()) {
+			if(dagIndexes.containsKey(parentRef.getPageRef())) {
+				if(matchedParentPageRef == null) {
+					// Found first
+					matchedParentPageRef = parentRef.getPageRef();
+				} else {
+					// Found second, do not use and stop looking
+					matchedParentPageRef = null;
+					break;
+				}
+			}
+		}
+		shortTitles.put(node, PageUtils.getShortTitle(matchedParentPageRef, node));
+	}
+	pageContext.setAttribute("shortTitles", shortTitles);
 %>
 <nav id="semanticcms-pagegraph-dag">
 	<h1 id="semanticcms-pagegraph-header">Page Tree<%-- Yeah, I know it's a DAG --%></h1>
@@ -232,14 +262,14 @@ Arguments:
 				%>
 				<c:if test="${nodeCssClass != 'semanticcms-pagegraph-this-page' && nodeCssClass != 'semanticcms-pagegraph-page-disabled'}">
 					<li><ao:a
-						id="semanticcms-pagegraph-link-${dagIndexes[dagPage]}"
+						id="semanticcms-pagegraph-link-${dagIndexes[dagPage.pageRef]}"
 						rel="nofollow"
 						href="${dagPage.pageRef.servletPath}"
 						param.view="${view.isDefault() ? null : view.name}"
 					>
 						<ao:params values="${core:getViewLinkParams(view, dagPage)}" />
-						<ao:out value="${dagPage.title}" />
-					</ao:a></li><%-- shortTitle once relationship clear --%>
+						<ao:out value="${shortTitles[dagPage]}" />
+					</ao:a></li>
 				</c:if>
 			</c:forEach>
 		</ul>
@@ -266,9 +296,9 @@ Arguments:
 					<%-- Non-clickable nodes --%>
 					<ao:when test="#{nodeCssClass == 'semanticcms-pagegraph-this-page' || nodeCssClass == 'semanticcms-pagegraph-page-disabled'}">
 						g.setNode(
-							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
+							parseInt(<ao:out value="${dagIndexes[dagPage.pageRef]}" />),
 							{
-								label: <ao:out value="${dagPage.shortTitle}" />,
+								label: <ao:out value="${shortTitles[dagPage]}" />,
 								class: <ao:out value="${nodeCssClass}" />
 							}
 						);
@@ -276,10 +306,10 @@ Arguments:
 					<%-- Clickable nodes --%>
 					<ao:otherwise>
 						g.setNode(
-							parseInt(<ao:out value="${dagIndexes[dagPage]}" />),
+							parseInt(<ao:out value="${dagIndexes[dagPage.pageRef]}" />),
 							semanticcms_pagegraph.createDagNode(
-								<ao:out value="${dagPage.shortTitle}" />,
-								document.getElementById('semanticcms-pagegraph-link-' + <ao:out value="${dagIndexes[dagPage]}" />).getAttribute('href'),
+								<ao:out value="${shortTitles[dagPage]}" />,
+								document.getElementById('semanticcms-pagegraph-link-' + <ao:out value="${dagIndexes[dagPage.pageRef]}" />).getAttribute('href'),
 								<ao:out value="${nodeCssClass}" />
 							)
 						);
@@ -303,8 +333,8 @@ Arguments:
 				<c:set var="dagParentPage" value="${dagEntry.key}" />
 				<c:forEach var="dagChildPage" items="${dagEntry.value}">
 					g.setEdge(
-						parseInt(<ao:out value="${dagIndexes[dagParentPage]}" />),
-						parseInt(<ao:out value="${dagIndexes[dagChildPage]}" />)
+						parseInt(<ao:out value="${dagIndexes[dagParentPage.pageRef]}" />),
+						parseInt(<ao:out value="${dagIndexes[dagChildPage.pageRef]}" />)
 					);
 				</c:forEach>
 			</c:forEach>
