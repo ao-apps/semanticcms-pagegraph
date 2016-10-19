@@ -1,11 +1,14 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://www.aoindustries.com/) [SemanticCMS](https://semanticcms.com/) / [PageGraph](https://semanticcms.com/pagegraph/)
-[SemanticCMS](https://semanticcms.com/) component to view a graph of the current page and related pages.
+[SemanticCMS component to view a graph](https://semanticcms.com/pagegraph/) of the current page and related pages.
 
 ## Project Links
 * [Project Home](https://semanticcms.com/pagegraph/)
 * [API Docs](https://semanticcms.com/pagegraph/apidocs/)
 * [Maven Central Repository](https://search.maven.org/#search|gav|1|g:%22com.semanticcms%22%20AND%20a:%22semanticcms-pagegraph%22)
 * [GitHub](https://github.com/aoindustries/semanticcms-pagegraph)
+
+## Modules
+* [SemanticCMS PageGraph Book](https://semanticcms.com/pagegraph/book/)
 
 ## Contact Us
 For questions or support, please [contact us](https://www.aoindustries.com/contact):
