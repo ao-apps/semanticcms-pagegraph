@@ -32,7 +32,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 
 	<groupId>com.semanticcms</groupId>
 	<artifactId>semanticcms-pagegraph</artifactId>
-	<version>1.3.1</version>
+	<version>1.3.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>SemanticCMS PageGraph</name>
@@ -44,7 +44,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<connection>scm:git:git://github.com/aoindustries/semanticcms-pagegraph.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-pagegraph.git</developerConnection>
 		<url>http://github.com/aoindustries/semanticcms-pagegraph</url>
-		<tag>semanticcms-pagegraph-1.3.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<profiles>
