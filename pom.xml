@@ -27,7 +27,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 	<parent>
 		<groupId>com.semanticcms</groupId>
 		<artifactId>semanticcms</artifactId>
-		<version>1.5.0</version>
+		<version>1.5.1-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.semanticcms</groupId>
@@ -43,7 +43,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 	<scm>
 		<connection>scm:git:git://github.com/aoindustries/semanticcms-pagegraph.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-pagegraph.git</developerConnection>
-		<url>http://github.com/aoindustries/semanticcms-pagegraph</url>
+		<url>https://github.com/aoindustries/semanticcms-pagegraph</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -158,17 +158,17 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>ao-taglib</artifactId>
-			<version>2.2.0</version>
+			<version>2.2.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-servlet</artifactId>
-			<version>1.9.0</version>
+			<version>1.9.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-taglib</artifactId>
-			<version>1.8.0</version>
+			<version>1.8.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
