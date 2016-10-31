@@ -57,7 +57,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<changelog:release
 			projectName="@{project.name}"
 			version="1.0.1"
-			dateCreated="2016-10-20T19:32:00-0500"
+			datePublished="2016-10-20T19:32:00-0500"
 			groupId="@{project.groupId}"
 			artifactId="@{project.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -75,7 +75,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<changelog:release
 			projectName="@{project.name}"
 			version="1.3.0"
-			dateCreated="2016-10-04T22:55:00-0500"
+			datePublished="2016-10-04T22:55:00-0500"
 			groupId="@{project.groupId}"
 			artifactId="@{project.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -91,7 +91,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<changelog:release
 			projectName="@{project.name}"
 			version="1.2"
-			dateCreated="2016-09-11T16:59:00-0500"
+			datePublished="2016-09-11T16:59:00-0500"
 			groupId="@{project.groupId}"
 			artifactId="@{project.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -105,7 +105,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<changelog:release
 			projectName="@{project.name}"
 			version="1.1"
-			dateCreated="2016-09-03T10:36:00-0500"
+			datePublished="2016-09-03T10:36:00-0500"
 			groupId="@{project.groupId}"
 			artifactId="@{project.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -118,7 +118,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<changelog:release
 			projectName="@{project.name}"
 			version="1.0"
-			dateCreated="2016-08-28T20:55:00-0500"
+			datePublished="2016-08-28T20:55:00-0500"
 			groupId="@{project.groupId}"
 			artifactId="@{project.artifactId}"
 			scmUrl="@{project.scm.url}"
