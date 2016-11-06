@@ -36,7 +36,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Set" %>
 
-<%@ taglib prefix="ao" uri="http://aoindustries.com/ao-taglib" %>
+<%@ taglib prefix="ao" uri="https://aoindustries.com/ao-taglib/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="core" uri="https://semanticcms.com/core/taglib/" %>
 
