@@ -1,6 +1,6 @@
 /*
  * semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
- * Copyright (C) 2016  AO Industries, Inc.
+ * Copyright (C) 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,24 +22,24 @@
  */
 package com.semanticcms.pagegraph;
 
-import com.semanticcms.core.servlet.SemanticCMS;
+import com.semanticcms.core.renderer.html.HtmlRenderer;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener("Registers the CSS and scripts in SemanticCMS.")
+@WebListener("Registers the CSS and scripts in HtmlRenderer.")
 public class PageGraphContextListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
-		semanticCMS.addScript("d3js", "/webjars/d3js/3.5.17/d3.min.js");
+		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
+		htmlRenderer.addCssLink("/semanticcms-pagegraph/styles.css");
+		htmlRenderer.addScript("d3js", "/webjars/d3js/3.5.17/d3.min.js");
 		// webjars is only version 0.4.10, which is not working on Android, manually installed version 0.4.17
 		// TODO: Switch back to webjars once newer version packaged
 		//semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.4.10/dagre-d3.min.js");
-		semanticCMS.addScript("dagre-d3", "/semanticcms-pagegraph/dagre-d3-0.4.17.min.js");
-		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
+		htmlRenderer.addScript("dagre-d3", "/semanticcms-pagegraph/dagre-d3-0.4.17.min.js");
+		htmlRenderer.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
 	}
 
 	@Override
