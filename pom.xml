@@ -62,6 +62,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 								<links>
 									<link>${javac.link.javaApi}</link>
 									<link>${javac.link.javaeeApi.6}</link>
+									<link>https://aoindustries.com/ao-servlet-firewall/webjars/apidocs/</link>
 									<link>https://aoindustries.com/ao-taglib/apidocs/</link>
 									<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
 									<link>https://semanticcms.com/core/taglib/apidocs/</link>
@@ -100,6 +101,10 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 					<groupId>javax.servlet.jsp.jstl</groupId><artifactId>jstl-api</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<!-- Open servlet firewall for /webjars/*** -->
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>3.5.17</version>
