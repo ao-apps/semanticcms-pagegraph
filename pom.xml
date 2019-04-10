@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-Copyright (C) 2016, 2017, 2018  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<description.html><![CDATA[<a target="_top" href="https://semanticcms.com/">SemanticCMS</a> component to view a graph of the current page and related pages.]]></description.html>
 	</properties>
 
-	<name>SemanticCMS PageGraph</name>
+	<name>SemanticCMS 2 PageGraph</name>
 	<url>https://semanticcms.com/pagegraph/</url>
 	<description>SemanticCMS component to view a graph of the current page and related pages.</description>
 	<inceptionYear>2016</inceptionYear>
