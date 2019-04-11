@@ -1,6 +1,6 @@
 <%--
 semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-Copyright (C) 2016  AO Industries, Inc.
+Copyright (C) 2016, 2018  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -205,6 +205,7 @@ Arguments:
 
 	// Finds the effective short title per node.
 	// If the node only has one parent in the DAG, will use that parent as context.
+	// TODO: If the page has the same short title on all parents, use it
 	// Otherwise uses shortTitle on the node itself.
 	Map<Page,String> shortTitles = new HashMap<Page,String>(dag.size()*4/3 + 1);
 	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
