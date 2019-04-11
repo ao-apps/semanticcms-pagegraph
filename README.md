@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://aoindustries.com/) [SemanticCMS](https://semanticcms.com/) / [PageGraph](https://semanticcms.com/pagegraph/)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [SemanticCMS](https://github.com/aoindustries/semanticcms) / [PageGraph](https://github.com/aoindustries/semanticcms-pagegraph)
 <p>
 	<a href="https://aoindustries.com/life-cycle#project-current-stable">
 		<img src="https://semanticcms.com/ao-badges/project-current-stable.svg" alt="project: current stable" />
@@ -24,7 +24,7 @@
 	</a>
 </p>
 
-[SemanticCMS component to view a graph](https://semanticcms.com/pagegraph/) of the current page and related pages.
+[SemanticCMS component to view a graph](https://github.com/aoindustries/semanticcms-pagegraph) of the current page and related pages.
 
 ## Project Links
 * [Project Home](https://semanticcms.com/pagegraph/)
