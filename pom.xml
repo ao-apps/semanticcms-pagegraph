@@ -30,7 +30,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 	</parent>
 
 	<groupId>com.semanticcms</groupId><artifactId>semanticcms-pagegraph</artifactId><version>1.3.4-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 
 	<properties>
 		<shortTitle>PageGraph</shortTitle>
