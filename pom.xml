@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<description.html><![CDATA[<a target="_top" href="https://semanticcms.com/">SemanticCMS</a> component to view a graph of the current page and related pages.]]></description.html>
 	</properties>
 
-	<name>SemanticCMS 1 PageGraph</name>
+	<name>SemanticCMS PageGraph</name>
 	<url>https://semanticcms.com/pagegraph/</url>
 	<description>SemanticCMS component to view a graph of the current page and related pages.</description>
 	<inceptionYear>2016</inceptionYear>

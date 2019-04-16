@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<documented.groupId>com.semanticcms</documented.groupId><documented.artifactId>semanticcms-pagegraph</documented.artifactId>
 		<documented.javaVersion>1.7</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk7}</documented.javac.link.javaApi>
-		<documented.name>SemanticCMS 1 PageGraph</documented.name>
+		<documented.name>SemanticCMS PageGraph</documented.name>
 		<documented.shortTitle>PageGraph</documented.shortTitle>
 		<documented.url>https://semanticcms.com/pagegraph/</documented.url>
 		<documented.description>SemanticCMS component to view a graph of the current page and related pages.</documented.description>
