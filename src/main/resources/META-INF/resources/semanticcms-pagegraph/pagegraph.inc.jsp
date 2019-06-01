@@ -1,6 +1,6 @@
 <%--
 semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-Copyright (C) 2016, 2018  AO Industries, Inc.
+Copyright (C) 2016, 2018, 2019  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -52,6 +52,14 @@ For DAG, see http://cpettitt.github.io/project/dagre-d3/latest/demo/sentence-tok
 Arguments:
 	arg.page  The page that should be displayed.
 	arg.view  The current view
+
+TODO:
+	Perform a topological sort of all elements in the list, with the home page on top.
+		This will make the list more meaningful in a text-only reader or with JavaScript disabled.
+	Also check if nested list items would be possible.
+		When there are only single parents, this would make a great list representation of the site structure.
+		When there are multiple parents, only include in the first parent.
+			This is consistent with the Breadcrumbs JSON-LD which, by default, only follows the first parent.
 --%>
 <c:set var="page" value="${arg.page}" />
 <c:set var="view" value="${arg.view}" />
