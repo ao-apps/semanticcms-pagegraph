@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T11:43:25-0500"
-		dateModified="2019-06-04T19:22:55-0500"
+		dateModified="2019-06-11T22:58:34-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-pagegraph:pom.version}" />
@@ -61,6 +61,8 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 							<li>This project's managed dependencies may also be imported by other projects.</li>
 						</ol>
 					</li>
+					<li>Upgraded d3js from 3.5.17 to 5.9.1.</li>
+					<li>Upgraded dagre-d3 from 0.4.17 to 0.6.3.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

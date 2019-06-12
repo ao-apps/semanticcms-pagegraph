@@ -1,6 +1,6 @@
 /*
  * semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
- * Copyright (C) 2016, 2017  AO Industries, Inc.
+ * Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,11 +34,9 @@ public class PageGraphContextListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
 		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
-		semanticCMS.addScript("d3js", "/webjars/d3js/3.5.17/d3.min.js");
-		// webjars is only version 0.4.10, which is not working on Android, manually installed version 0.4.17
-		// TODO: Switch back to webjars once newer version packaged
-		//semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.4.10/dagre-d3.min.js");
-		semanticCMS.addScript("dagre-d3", "/semanticcms-pagegraph/dagre-d3-0.4.17.min.js");
+		// TODO: Get versions from a Maven.properties, with version automatically substituted from dependency
+		semanticCMS.addScript("d3js", "/webjars/d3js/5.9.1/d3.min.js");
+		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.6.3/dist/dagre-d3.min.js");
 		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
 	}
 

@@ -110,14 +110,13 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>3.5.17</version>
+				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.9.1</version>
 			</dependency>
-			<!-- webjars is only version 0.4.10, which is not working on Android, manually installed version 0.4.17
-				 TODO: Switch back to webjars once newer version packaged
 			<dependency>
-				<groupId>org.webjars</groupId><artifactId>dagre-d3</artifactId><version>0.4.10</version>
+				<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.3</version>
+				<!-- Avoid all the transitive npm dependencies, we're only directly using the .js file -->
+				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 			</dependency>
-			-->
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.12.1-SNAPSHOT</version>
 			</dependency>
@@ -150,12 +149,9 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>org.webjars</groupId><artifactId>d3js</artifactId>
 		</dependency>
-		<!-- webjars is only version 0.4.10, which is not working on Android, manually installed version 0.4.17
-		     TODO: Switch back to webjars once newer version packaged
 		<dependency>
-			<groupId>org.webjars</groupId><artifactId>dagre-d3</artifactId>
+			<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
 		</dependency>
-		-->
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
 		</dependency>
