@@ -34,6 +34,7 @@ public class PageGraphContextListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
 		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
+		semanticCMS.addPrintCssLink("/semanticcms-pagegraph/styles-print.css");
 		// TODO: Get versions from a Maven.properties, with version automatically substituted from dependency
 		semanticCMS.addScript("d3js", "/webjars/d3js/5.9.1/d3.min.js");
 		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/0.6.3/dist/dagre-d3.min.js");
