@@ -36,7 +36,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T11:43:25-0500"
-		dateModified="2019-10-04T07:48:08-0500"
+		dateModified="2019-10-12T00:51:14-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-pagegraph:pom.version}" />
@@ -51,12 +51,21 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			>
-				<ul>
-					<li>Upgraded d3js from 5.9.1 to 5.9.7.</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.4.1"
+			datePublished="2019-10-12T00:51:14-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Upgraded d3js from 5.9.1 to 5.9.7.</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
