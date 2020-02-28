@@ -33,11 +33,11 @@ public class Initializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		semanticCMS.addCssLink("/semanticcms-pagegraph/styles.css");
-		semanticCMS.addPrintCssLink("/semanticcms-pagegraph/styles-print.css");
+		semanticCMS.addCssLink("/semanticcms-pagegraph/semanticcms-pagegraph.css");
+		semanticCMS.addPrintCssLink("/semanticcms-pagegraph/semanticcms-pagegraph-print.css");
 		semanticCMS.addScript("d3js", "/webjars/d3js/" + Maven.properties.getProperty("d3js.version") + "/d3.min.js");
 		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/" + Maven.properties.getProperty("dagre-d3.version") + "/dist/dagre-d3.min.js");
-		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/scripts.js");
+		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
 	}
 
 	@Override
