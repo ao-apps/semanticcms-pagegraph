@@ -22,19 +22,34 @@
  */
 package com.semanticcms.pagegraph;
 
+import com.aoindustries.web.resources.registry.Style;
+import com.aoindustries.web.resources.registry.Styles;
+import com.aoindustries.web.resources.servlet.RegistryEE;
 import com.semanticcms.core.servlet.SemanticCMS;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener("Registers the CSS and scripts in SemanticCMS.")
-public class Initializer implements ServletContextListener {
+@WebListener("Registers the CSS and scripts in RegistryEE and SemanticCMS.")
+public class PageGraph implements ServletContextListener {
+
+	public static final Style SEMANTICCMS_PAGEGRAPH = new Style("/semanticcms-pagegraph/semanticcms-pagegraph.css");
+	public static final Style SEMANTICCMS_PAGEGRAPH_PRINT = Style.builder()
+		.uri("/semanticcms-pagegraph/semanticcms-pagegraph-print.css")
+		.media("print")
+		.build();
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		semanticCMS.addCssLink("/semanticcms-pagegraph/semanticcms-pagegraph.css");
-		semanticCMS.addPrintCssLink("/semanticcms-pagegraph/semanticcms-pagegraph-print.css");
+		ServletContext servletContext = event.getServletContext();
+
+		// Add our CSS files
+		Styles styles = RegistryEE.get(servletContext).global.styles;
+		styles.add(SEMANTICCMS_PAGEGRAPH);
+		styles.add(SEMANTICCMS_PAGEGRAPH_PRINT);
+
+		SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
 		semanticCMS.addScript("d3js", "/webjars/d3js/" + Maven.properties.getProperty("d3js.version") + "/d3.min.js");
 		semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/" + Maven.properties.getProperty("dagre-d3.version") + "/dist/dagre-d3.min.js");
 		semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
