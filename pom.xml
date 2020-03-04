@@ -70,6 +70,8 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 								<link>https://aoindustries.com/ao-lang/webjars/apidocs/</link>
 								<link>https://aoindustries.com/ao-servlet-firewall/webjars/apidocs/</link>
 								<link>https://aoindustries.com/ao-taglib/apidocs/</link>
+								<link>https://aoindustries.com/ao-web-resources/registry/apidocs/</link>
+								<link>https://aoindustries.com/ao-web-resources/servlet/apidocs/</link>
 								<!-- No apidocs: <groupId>org.webjars</groupId><artifactId>d3js</artifactId> -->
 								<!-- No apidocs: <groupId>org.webjars</groupId><artifactId>dagre-d3</artifactId> -->
 								<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
@@ -99,6 +101,12 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-registry</artifactId><version>0.1.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-servlet</artifactId><version>0.1.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.9.7</version>
@@ -143,6 +151,12 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-registry</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-servlet</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId><artifactId>d3js</artifactId>
