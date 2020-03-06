@@ -22,6 +22,7 @@
  */
 package com.semanticcms.pagegraph;
 
+import com.aoindustries.web.resources.registry.Group;
 import com.aoindustries.web.resources.registry.Style;
 import com.aoindustries.web.resources.registry.Styles;
 import com.aoindustries.web.resources.servlet.RegistryEE;
@@ -34,6 +35,9 @@ import javax.servlet.annotation.WebListener;
 @WebListener("Registers the CSS and scripts in RegistryEE and HtmlRenderer.")
 public class PageGraph implements ServletContextListener {
 
+	public static final Group.Name RESOURCE_GROUP = new Group.Name("semanticcms-pagegraph");
+
+	// TODO: Change to Group.Name once we have group-level ordering
 	public static final Style SEMANTICCMS_PAGEGRAPH = new Style("/semanticcms-pagegraph/semanticcms-pagegraph.css");
 	public static final Style SEMANTICCMS_PAGEGRAPH_PRINT = Style.builder()
 		.uri("/semanticcms-pagegraph/semanticcms-pagegraph-print.css")
@@ -45,7 +49,10 @@ public class PageGraph implements ServletContextListener {
 		ServletContext servletContext = event.getServletContext();
 
 		// Add our CSS files
-		Styles styles = RegistryEE.get(servletContext).global.styles;
+		Styles styles = RegistryEE.Application.get(servletContext)
+			.activate(RESOURCE_GROUP) // TODO: Activate as-needed
+			.getGroup(RESOURCE_GROUP)
+			.styles;
 		styles.add(SEMANTICCMS_PAGEGRAPH);
 		styles.add(SEMANTICCMS_PAGEGRAPH_PRINT);
 
