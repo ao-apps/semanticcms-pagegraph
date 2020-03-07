@@ -24,7 +24,6 @@ package com.semanticcms.pagegraph;
 
 import com.aoindustries.web.resources.registry.Group;
 import com.aoindustries.web.resources.registry.Style;
-import com.aoindustries.web.resources.registry.Styles;
 import com.aoindustries.web.resources.servlet.RegistryEE;
 import com.semanticcms.core.renderer.html.HtmlRenderer;
 import javax.servlet.ServletContext;
@@ -49,12 +48,14 @@ public class PageGraph implements ServletContextListener {
 		ServletContext servletContext = event.getServletContext();
 
 		// Add our CSS files
-		Styles styles = RegistryEE.Application.get(servletContext)
+		RegistryEE.Application.get(servletContext)
 			.activate(RESOURCE_GROUP) // TODO: Activate as-needed
 			.getGroup(RESOURCE_GROUP)
-			.styles;
-		styles.add(SEMANTICCMS_PAGEGRAPH);
-		styles.add(SEMANTICCMS_PAGEGRAPH_PRINT);
+			.styles
+			.add(
+				SEMANTICCMS_PAGEGRAPH,
+				SEMANTICCMS_PAGEGRAPH_PRINT
+			);
 
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
 		htmlRenderer.addScript("d3js", "/webjars/d3js/" + Maven.properties.getProperty("d3js.version") + "/d3.min.js");
