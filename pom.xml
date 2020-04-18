@@ -68,13 +68,9 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 								<link>${javadoc.link.javaee}</link>
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-lang/apidocs/</link>
-								<link>https://aoindustries.com/ao-taglib/apidocs/</link>
 								<link>https://aoindustries.com/ao-web-resources/registry/apidocs/</link>
 								<link>https://aoindustries.com/ao-web-resources/servlet/apidocs/</link>
-								<!-- No apidocs: <groupId>org.webjars</groupId><artifactId>d3js</artifactId> -->
-								<!-- No apidocs: <groupId>org.webjars</groupId><artifactId>dagre-d3</artifactId> -->
 								<link>https://semanticcms.com/core/servlet/apidocs/</link>
-								<link>https://semanticcms.com/core/taglib/apidocs/</link>
 							</links>
 						</configuration>
 					</plugin>
@@ -96,13 +92,17 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.1.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.0${POST-SNAPSHOT}</version>
-			</dependency>
-			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-registry</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-servlet</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.15.0${POST-SNAPSHOT}</version>
+			</dependency>
+			<!-- Runtime Direct -->
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.9.7</version>
@@ -111,9 +111,6 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
 				<!-- Avoid all the transitive npm dependencies, we're only directly using the .js file -->
 				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.15.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.12.0${POST-SNAPSHOT}</version>
@@ -131,18 +128,9 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId><artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
-		</dependency>
 		<!-- Direct -->
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-registry</artifactId>
@@ -151,16 +139,32 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-servlet</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
+		</dependency>
+		<!-- Runtime Direct -->
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.webjars</groupId><artifactId>d3js</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
+			<groupId>javax.servlet</groupId><artifactId>jstl</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>
