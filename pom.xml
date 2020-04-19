@@ -34,7 +34,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 
 	<properties>
 		<shortTitle>PageGraph</shortTitle>
-		<description.html><![CDATA[<a target="_top" href="https://semanticcms.com/">SemanticCMS</a> component to view a graph of the current page and related pages.]]></description.html>
+		<description.html><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> component to view a graph of the current page and related pages.]]></description.html>
 	</properties>
 
 	<name>SemanticCMS PageGraph²</name>
