@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T11:43:25-0500"
-		dateModified="2020-03-29T00:49:17-05:00"
+		dateModified="2020-04-26T19:18:27-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-pagegraph:pom.version}" />
@@ -52,7 +52,16 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>
+						Now reading deployed versions of <code>org.webjars:d3js</code>
+						and <code>org.webjars.npm:dagre-d3</code> from
+						<code>pom.properties</code> instead of assuming the versions
+						at build time are also used at runtime.
+					</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release
