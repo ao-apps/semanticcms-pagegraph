@@ -67,7 +67,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 								<!-- Java EE -->
 								<link>${javadoc.link.javaee}</link>
 								<!-- Direct -->
-								<link>https://aoindustries.com/ao-lang/webjars/apidocs/</link>
+								<link>https://aoindustries.com/ao-lang/apidocs/</link>
 								<link>https://aoindustries.com/ao-web-resources/registry/apidocs/</link>
 								<link>https://aoindustries.com/ao-web-resources/servlet/apidocs/</link>
 								<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
@@ -89,7 +89,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Direct -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.2.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-web-resources-registry</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
