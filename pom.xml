@@ -151,7 +151,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.1${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.16.0</version>
