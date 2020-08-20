@@ -1,6 +1,6 @@
 /*
  * semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
- * Copyright (C) 2019  AO Industries, Inc.
+ * Copyright (C) 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,16 +22,21 @@
  */
 package com.semanticcms.pagegraph;
 
+import com.aoindustries.lang.Projects;
 import com.aoindustries.util.PropertiesUtils;
 import java.io.IOException;
 import java.util.Properties;
 
 class Maven {
 
-	static final Properties properties;
+	static final String d3jsVersion;
+	static final String dagreD3Version;
+
 	static {
 		try {
-			properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
+			Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
+			d3jsVersion = Projects.getVersion("org.webjars", "d3js", properties.getProperty("d3jsVersion"));
+			dagreD3Version = Projects.getVersion("org.webjars.npm", "dagre-d3", properties.getProperty("dagreD3Version"));
 		} catch(IOException e) {
 			throw new ExceptionInInitializerError(e);
 		}
