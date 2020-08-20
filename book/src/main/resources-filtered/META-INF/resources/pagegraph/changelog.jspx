@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T11:43:25-0500"
-		dateModified="2020-04-27T09:27:36-05:00"
+		dateModified="2020-08-19T23:21:32-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-pagegraph:pom.version}" />
@@ -55,6 +55,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			>
 				<ul>
 					<li>Updated for <core:link book="/" page="/" /> 2 compatibility.</li>
+					<li>Now URI-encoding dependency versions obtained at runtime.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

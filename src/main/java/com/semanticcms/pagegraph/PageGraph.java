@@ -22,7 +22,7 @@
  */
 package com.semanticcms.pagegraph;
 
-import com.aoindustries.lang.Projects;
+import com.aoindustries.net.URIEncoder;
 import com.aoindustries.web.resources.registry.Group;
 import com.aoindustries.web.resources.registry.Style;
 import com.aoindustries.web.resources.servlet.RegistryEE;
@@ -59,8 +59,8 @@ public class PageGraph implements ServletContextListener {
 			);
 
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
-		htmlRenderer.addScript("d3js", "/webjars/d3js/" + Projects.getVersion("org.webjars", "d3js", Maven.properties.getProperty("d3js.version")) + "/d3.min.js");
-		htmlRenderer.addScript("dagre-d3", "/webjars/dagre-d3/" + Projects.getVersion("org.webjars.npm", "dagre-d3", Maven.properties.getProperty("dagre-d3.version")) + "/dist/dagre-d3.min.js");
+		htmlRenderer.addScript("d3js", "/webjars/d3js/" + URIEncoder.encodeURIComponent(Maven.d3jsVersion) + "/d3.min.js");
+		htmlRenderer.addScript("dagre-d3", "/webjars/dagre-d3/" + URIEncoder.encodeURIComponent(Maven.dagreD3Version) + "/dist/dagre-d3.min.js");
 		htmlRenderer.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
 	}
 
