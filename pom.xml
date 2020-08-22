@@ -65,7 +65,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 						<dependency>javax.servlet:jstl</dependency>
 						<dependency>com.semanticcms:semanticcms-core-taglib</dependency>
 						<!-- Runtime Direct -->
-						<dependency>org.webjars:d3js</dependency>
+						<dependency>org.webjars.npm:d3</dependency>
 						<dependency>org.webjars.npm:dagre-d3</dependency>
 						<dependency>org.glassfish.web:jstl-impl</dependency>
 					</usedDependencies>
@@ -251,12 +251,22 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
-				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.16.0</version>
+				<groupId>org.webjars.npm</groupId><artifactId>d3</artifactId><version>5.16.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
 			</dependency>
 			<!-- javaee-web-api-bom: <groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId> -->
+			<!-- Runtime Transitive -->
+			<dependency>
+				<groupId>org.webjars.npm</groupId><artifactId>dagre</artifactId><version>0.8.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars.npm</groupId><artifactId>graphlib</artifactId><version>2.1.8</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars.npm</groupId><artifactId>lodash</artifactId><version>4.17.20</version>
+			</dependency>
 			<!-- BOM -->
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>javaee-web-api-bom</artifactId><version>6.0.1${POST-SNAPSHOT}</version>
@@ -297,14 +307,14 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		</dependency>
 		<!-- Runtime Direct -->
 		<dependency>
-			<groupId>org.webjars</groupId><artifactId>d3js</artifactId>
+			<groupId>org.webjars.npm</groupId><artifactId>d3</artifactId>
 			<scope>runtime</scope>
+			<!-- Avoid all the transitive npm dependencies, we're only directly using the .js file -->
+			<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
 			<scope>runtime</scope>
-			<!-- Avoid all the transitive npm dependencies, we're only directly using the .js file -->
-			<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
