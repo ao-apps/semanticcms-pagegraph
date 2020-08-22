@@ -59,7 +59,10 @@ public class PageGraph implements ServletContextListener {
 			);
 
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
-		htmlRenderer.addScript("d3js", "/webjars/d3js/" + URIEncoder.encodeURIComponent(Maven.d3jsVersion) + "/d3.min.js");
+		htmlRenderer.addScript("d3", "/webjars/d3/" + URIEncoder.encodeURIComponent(Maven.d3Version) + "/dist/d3.min.js");
+		htmlRenderer.addScript("lodash", "/webjars/lodash/" + URIEncoder.encodeURIComponent(Maven.lodashVersion) + "/lodash.min.js");
+		htmlRenderer.addScript("graphlib", "/webjars/graphlib/" + URIEncoder.encodeURIComponent(Maven.graphlibVersion) + "/dist/graphlib.min.js");
+		htmlRenderer.addScript("dagre", "/webjars/dagre/" + URIEncoder.encodeURIComponent(Maven.dagreVersion) + "/dist/dagre.min.js");
 		htmlRenderer.addScript("dagre-d3", "/webjars/dagre-d3/" + URIEncoder.encodeURIComponent(Maven.dagreD3Version) + "/dist/dagre-d3.min.js");
 		htmlRenderer.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
 	}

@@ -29,14 +29,24 @@ import java.util.Properties;
 
 class Maven {
 
-	static final String d3jsVersion;
+	// Runtime Direct
+	static final String d3Version;
 	static final String dagreD3Version;
+	// Runtime Transitive
+	static final String dagreVersion;
+	static final String graphlibVersion;
+	static final String lodashVersion;
 
 	static {
 		try {
 			Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
-			d3jsVersion = Projects.getVersion("org.webjars", "d3js", properties.getProperty("d3jsVersion"));
+			// Runtime Direct
+			d3Version = Projects.getVersion("org.webjars.npm", "d3", properties.getProperty("d3Version"));
 			dagreD3Version = Projects.getVersion("org.webjars.npm", "dagre-d3", properties.getProperty("dagreD3Version"));
+			// Runtime Transitive
+			dagreVersion = Projects.getVersion("org.webjars.npm", "dagre", properties.getProperty("dagreVersion"));
+			graphlibVersion = Projects.getVersion("org.webjars.npm", "graphlib", properties.getProperty("graphlibVersion"));
+			lodashVersion = Projects.getVersion("org.webjars.npm", "lodash", properties.getProperty("lodashVersion"));
 		} catch(IOException e) {
 			throw new ExceptionInInitializerError(e);
 		}
