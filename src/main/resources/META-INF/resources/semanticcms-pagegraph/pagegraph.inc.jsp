@@ -1,6 +1,6 @@
 <%--
 semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-Copyright (C) 2016, 2018, 2019  AO Industries, Inc.
+Copyright (C) 2016, 2018, 2019, 2020  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -22,6 +22,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 --%>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
+<%@ page import="com.aoindustries.collections.AoCollections" %>
 <%@ page import="com.semanticcms.core.model.ChildRef" %>
 <%@ page import="com.semanticcms.core.model.Page" %>
 <%@ page import="com.semanticcms.core.model.PageRef" %>
@@ -200,7 +201,7 @@ TODO:
 	);
 
 	// Assign integer IDs to pages
-	Map<PageRef,Integer> dagIndexes = new HashMap<PageRef,Integer>(dag.size()*4/3 + 1);
+	Map<PageRef,Integer> dagIndexes = AoCollections.newHashMap(dag.size());
 	int index = 0;
 	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
 		dagIndexes.put(entry.getKey().getPageRef(), index++);
@@ -216,7 +217,7 @@ TODO:
 	// If the node only has one parent in the DAG, will use that parent as context.
 	// TODO: If the page has the same short title on all parents, use it
 	// Otherwise uses shortTitle on the node itself.
-	Map<Page,String> shortTitles = new HashMap<Page,String>(dag.size()*4/3 + 1);
+	Map<Page,String> shortTitles = AoCollections.newHashMap(dag.size());
 	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
 		Page node = entry.getKey();
 		PageRef matchedParentPageRef = null;
