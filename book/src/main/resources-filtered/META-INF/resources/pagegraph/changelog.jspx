@@ -37,7 +37,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T11:43:25-0500"
-		dateModified="2020-08-21T22:31:38-05:00"
+		dateModified="2020-11-27T20:17:26-06:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-pagegraph:pom.version}" />
@@ -52,23 +52,32 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>Now URI-encoding dependency versions obtained at runtime.</li>
-					<li>
-						<p>
-							Switched to <ao:a href="https://www.npmjs.com/">NPM</ao:a>-based <ao:a href="https://www.webjars.org/">WebJars</ao:a>
-							in groupId <code><ao:a href="https://search.maven.org/search?q=g:org.webjars.npm">org.webjars.npm</ao:a></code>,
-							where possible.  The NPM WebJars seem more up-to-date and actively supported than Classic WebJars.
-						</p>
-						<p>
-							Furthermore, <ao:a href="https://snyk.io/blog/bower-is-dead/">Bower has been deprecated</ao:a>,
-							so we are reluctant to use either "Bower GitHub" or "Bower Original" WebJars.
-						</p>
-					</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.6.1"
+			datePublished="2020-11-27T20:17:26-06:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>Now URI-encoding dependency versions obtained at runtime.</li>
+				<li>
+					<p>
+						Switched to <ao:a href="https://www.npmjs.com/">NPM</ao:a>-based <ao:a href="https://www.webjars.org/">WebJars</ao:a>
+						in groupId <code><ao:a href="https://search.maven.org/search?q=g:org.webjars.npm">org.webjars.npm</ao:a></code>,
+						where possible.  The NPM WebJars seem more up-to-date and actively supported than Classic WebJars.
+					</p>
+					<p>
+						Furthermore, <ao:a href="https://snyk.io/blog/bower-is-dead/">Bower has been deprecated</ao:a>,
+						so we are reluctant to use either "Bower GitHub" or "Bower Original" WebJars.
+					</p>
+				</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
