@@ -218,7 +218,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
 			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>jstl</artifactId> -->
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.16.0${POST-SNAPSHOT}</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.17.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.14.0${POST-SNAPSHOT}</version>
