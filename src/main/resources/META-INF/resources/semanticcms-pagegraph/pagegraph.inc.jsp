@@ -1,6 +1,6 @@
 <%--
 semanticcms-pagegraph - SemanticCMS component to view a graph of the current page and related pages.
-Copyright (C) 2016, 2018, 2019, 2020  AO Industries, Inc.
+Copyright (C) 2016, 2018, 2019, 2020, 2021  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -38,7 +38,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Set" %>
 
-<%@ taglib prefix="ao" uri="https://aoindustries.com/ao-taglib/" %>
+<%@ taglib prefix="ao" uri="https://oss.aoapps.com/taglib/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="core" uri="https://semanticcms.com/core/taglib/" %>
 
