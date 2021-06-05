@@ -22,7 +22,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses/>.
 --%>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
-<%@ page import="com.aoindustries.collections.AoCollections" %>
+<%@ page import="com.aoapps.collections.AoCollections" %>
 <%@ page import="com.semanticcms.core.model.ChildRef" %>
 <%@ page import="com.semanticcms.core.model.Page" %>
 <%@ page import="com.semanticcms.core.model.PageRef" %>
