@@ -39,7 +39,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 		<description.html><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> component to view a graph of the current page and related pages.]]></description.html>
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.organization>ao-apps</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
@@ -74,20 +74,20 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/semanticcms-pagegraph.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-pagegraph.git</developerConnection>
-		<url>https://github.com/aoindustries/semanticcms-pagegraph</url>
+		<connection>scm:git:git://github.com/ao-apps/semanticcms-pagegraph.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/semanticcms-pagegraph.git</developerConnection>
+		<url>https://github.com/ao-apps/semanticcms-pagegraph</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/semanticcms-pagegraph/issues</url>
+		<url>https://github.com/ao-apps/semanticcms-pagegraph/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/semanticcms-pagegraph/actions</url>
+		<url>https://github.com/ao-apps/semanticcms-pagegraph/actions</url>
 	</ciManagement>
 
 	<repositories>
