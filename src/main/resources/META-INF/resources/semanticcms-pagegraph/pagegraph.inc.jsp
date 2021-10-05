@@ -73,7 +73,7 @@ TODO:
 		HttpServletRequest request,
 		HttpServletResponse response,
 		Page page,
-		Map<Page,Set<Page>> dag,
+		Map<Page, Set<Page>> dag,
 		Set<PageRef> visited
 	) throws ServletException, IOException {
 		PageRef pageRef = page.getPageRef();
@@ -110,13 +110,13 @@ TODO:
 		}
 	}
 
-	private static Map<Page,Set<Page>> createDag(
+	private static Map<Page, Set<Page>> createDag(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
 		Page page
 	) throws ServletException, IOException {
-		Map<Page,Set<Page>> dag = new LinkedHashMap<Page,Set<Page>>();
+		Map<Page, Set<Page>> dag = new LinkedHashMap<Page, Set<Page>>();
 		Set<PageRef> visited = new HashSet<PageRef>();
 		// Add children
 		boolean hasChild = false;
@@ -193,7 +193,7 @@ TODO:
 %>
 <%
 	// Build DAG
-	Map<Page,Set<Page>> dag = createDag(
+	Map<Page, Set<Page>> dag = createDag(
 		pageContext.getServletContext(),
 		(HttpServletRequest)pageContext.getRequest(),
 		(HttpServletResponse)pageContext.getResponse(),
@@ -201,9 +201,9 @@ TODO:
 	);
 
 	// Assign integer IDs to pages
-	Map<PageRef,Integer> dagIndexes = AoCollections.newHashMap(dag.size());
+	Map<PageRef, Integer> dagIndexes = AoCollections.newHashMap(dag.size());
 	int index = 0;
-	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
+	for(Map.Entry<Page, Set<Page>> entry : dag.entrySet()) {
 		dagIndexes.put(entry.getKey().getPageRef(), index++);
 	}
 
@@ -217,8 +217,8 @@ TODO:
 	// If the node only has one parent in the DAG, will use that parent as context.
 	// TODO: If the page has the same short title on all parents, use it
 	// Otherwise uses shortTitle on the node itself.
-	Map<Page,String> shortTitles = AoCollections.newHashMap(dag.size());
-	for(Map.Entry<Page,Set<Page>> entry : dag.entrySet()) {
+	Map<Page, String> shortTitles = AoCollections.newHashMap(dag.size());
+	for(Map.Entry<Page, Set<Page>> entry : dag.entrySet()) {
 		Page node = entry.getKey();
 		PageRef matchedParentPageRef = null;
 		for(ParentRef parentRef : node.getParentRefs()) {
