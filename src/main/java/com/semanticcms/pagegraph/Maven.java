@@ -27,7 +27,10 @@ import com.aoapps.lang.util.PropertiesUtils;
 import java.io.IOException;
 import java.util.Properties;
 
-class Maven {
+abstract class Maven {
+
+	/** Make no instances. */
+	private Maven() {throw new AssertionError();}
 
 	// Runtime Direct
 	static final String d3Version;
@@ -51,6 +54,4 @@ class Maven {
 			throw new ExceptionInInitializerError(e);
 		}
 	}
-
-	private Maven() {}
 }
