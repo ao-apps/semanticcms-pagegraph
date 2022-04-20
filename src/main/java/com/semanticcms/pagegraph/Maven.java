@@ -30,29 +30,31 @@ import java.util.Properties;
 
 final class Maven {
 
-	/** Make no instances. */
-	private Maven() {throw new AssertionError();}
+  /** Make no instances. */
+  private Maven() {
+    throw new AssertionError();
+  }
 
-	// Runtime Direct
-	static final String d3Version;
-	static final String dagreD3Version;
-	// Runtime Transitive
-	static final String dagreVersion;
-	static final String graphlibVersion;
-	static final String lodashVersion;
+  // Runtime Direct
+  static final String d3Version;
+  static final String dagreD3Version;
+  // Runtime Transitive
+  static final String dagreVersion;
+  static final String graphlibVersion;
+  static final String lodashVersion;
 
-	static {
-		try {
-			Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
-			// Runtime Direct
-			d3Version = Projects.getVersion("org.webjars.npm", "d3", properties.getProperty("d3Version"));
-			dagreD3Version = Projects.getVersion("org.webjars.npm", "dagre-d3", properties.getProperty("dagreD3Version"));
-			// Runtime Transitive
-			dagreVersion = Projects.getVersion("org.webjars.npm", "dagre", properties.getProperty("dagreVersion"));
-			graphlibVersion = Projects.getVersion("org.webjars.npm", "graphlib", properties.getProperty("graphlibVersion"));
-			lodashVersion = Projects.getVersion("org.webjars.npm", "lodash", properties.getProperty("lodashVersion"));
-		} catch(IOException e) {
-			throw new ExceptionInInitializerError(e);
-		}
-	}
+  static {
+    try {
+      Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
+      // Runtime Direct
+      d3Version = Projects.getVersion("org.webjars.npm", "d3", properties.getProperty("d3Version"));
+      dagreD3Version = Projects.getVersion("org.webjars.npm", "dagre-d3", properties.getProperty("dagreD3Version"));
+      // Runtime Transitive
+      dagreVersion = Projects.getVersion("org.webjars.npm", "dagre", properties.getProperty("dagreVersion"));
+      graphlibVersion = Projects.getVersion("org.webjars.npm", "graphlib", properties.getProperty("graphlibVersion"));
+      lodashVersion = Projects.getVersion("org.webjars.npm", "lodash", properties.getProperty("lodashVersion"));
+    } catch (IOException e) {
+      throw new ExceptionInInitializerError(e);
+    }
+  }
 }
