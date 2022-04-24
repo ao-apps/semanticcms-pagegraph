@@ -41,9 +41,9 @@ public class PageGraph implements ServletContextListener {
   // TODO: Change to Group.Name once we have group-level ordering
   public static final Style SEMANTICCMS_PAGEGRAPH = new Style("/semanticcms-pagegraph/semanticcms-pagegraph.css");
   public static final Style SEMANTICCMS_PAGEGRAPH_PRINT = Style.builder()
-    .uri("/semanticcms-pagegraph/semanticcms-pagegraph-print.css")
-    .media("print")
-    .build();
+      .uri("/semanticcms-pagegraph/semanticcms-pagegraph-print.css")
+      .media("print")
+      .build();
 
   @Override
   public void contextInitialized(ServletContextEvent event) {
@@ -51,13 +51,13 @@ public class PageGraph implements ServletContextListener {
 
     // Add our CSS files
     RegistryEE.Application.get(servletContext)
-      .activate(RESOURCE_GROUP) // TODO: Activate as-needed
-      .getGroup(RESOURCE_GROUP)
-      .styles
-      .add(
-        SEMANTICCMS_PAGEGRAPH,
-        SEMANTICCMS_PAGEGRAPH_PRINT
-      );
+        .activate(RESOURCE_GROUP) // TODO: Activate as-needed
+        .getGroup(RESOURCE_GROUP)
+        .styles
+        .add(
+            SEMANTICCMS_PAGEGRAPH,
+            SEMANTICCMS_PAGEGRAPH_PRINT
+        );
 
     SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
     semanticCMS.addScript("d3", "/webjars/d3/" + URIEncoder.encodeURIComponent(Maven.d3Version) + "/dist/d3.min.js");
