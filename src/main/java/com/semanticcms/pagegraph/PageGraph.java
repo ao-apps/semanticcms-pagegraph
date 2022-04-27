@@ -51,7 +51,7 @@ public class PageGraph implements ServletContextListener {
 
     // Add our CSS files
     RegistryEE.Application.get(servletContext)
-        .activate(RESOURCE_GROUP) // TODO: Activate as-needed
+        .activate(RESOURCE_GROUP)// TODO: Activate as-needed
         .getGroup(RESOURCE_GROUP)
         .styles
         .add(
