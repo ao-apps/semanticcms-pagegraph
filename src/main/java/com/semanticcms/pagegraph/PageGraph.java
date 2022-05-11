@@ -33,6 +33,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+/**
+ * Registers the CSS and scripts in {@link RegistryEE} and {@link SemanticCMS}.
+ */
 @WebListener("Registers the CSS and scripts in RegistryEE and SemanticCMS.")
 public class PageGraph implements ServletContextListener {
 
@@ -53,19 +56,19 @@ public class PageGraph implements ServletContextListener {
     RegistryEE.Application.get(servletContext)
         .activate(RESOURCE_GROUP)// TODO: Activate as-needed
         .getGroup(RESOURCE_GROUP)
-        .styles
-        .add(
-            SEMANTICCMS_PAGEGRAPH,
-            SEMANTICCMS_PAGEGRAPH_PRINT
-        );
+            .styles
+            .add(
+                SEMANTICCMS_PAGEGRAPH,
+                SEMANTICCMS_PAGEGRAPH_PRINT
+            );
 
-    SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
-    semanticCMS.addScript("d3", "/webjars/d3/" + URIEncoder.encodeURIComponent(Maven.d3Version) + "/dist/d3.min.js");
-    semanticCMS.addScript("lodash", "/webjars/lodash/" + URIEncoder.encodeURIComponent(Maven.lodashVersion) + "/lodash.min.js");
-    semanticCMS.addScript("graphlib", "/webjars/graphlib/" + URIEncoder.encodeURIComponent(Maven.graphlibVersion) + "/dist/graphlib.min.js");
-    semanticCMS.addScript("dagre", "/webjars/dagre/" + URIEncoder.encodeURIComponent(Maven.dagreVersion) + "/dist/dagre.min.js");
-    semanticCMS.addScript("dagre-d3", "/webjars/dagre-d3/" + URIEncoder.encodeURIComponent(Maven.dagreD3Version) + "/dist/dagre-d3.min.js");
-    semanticCMS.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
+    SemanticCMS semanticCms = SemanticCMS.getInstance(servletContext);
+    semanticCms.addScript("d3", "/webjars/d3/" + URIEncoder.encodeURIComponent(Maven.d3Version) + "/dist/d3.min.js");
+    semanticCms.addScript("lodash", "/webjars/lodash/" + URIEncoder.encodeURIComponent(Maven.lodashVersion) + "/lodash.min.js");
+    semanticCms.addScript("graphlib", "/webjars/graphlib/" + URIEncoder.encodeURIComponent(Maven.graphlibVersion) + "/dist/graphlib.min.js");
+    semanticCms.addScript("dagre", "/webjars/dagre/" + URIEncoder.encodeURIComponent(Maven.dagreVersion) + "/dist/dagre.min.js");
+    semanticCms.addScript("dagre-d3", "/webjars/dagre-d3/" + URIEncoder.encodeURIComponent(Maven.dagreD3Version) + "/dist/dagre-d3.min.js");
+    semanticCms.addScript("semanticcms-pagegraph", "/semanticcms-pagegraph/semanticcms-pagegraph.js");
   }
 
   @Override
