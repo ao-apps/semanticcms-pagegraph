@@ -33,6 +33,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+/**
+ * Registers the CSS and scripts in {@link RegistryEE} and {@link HtmlRenderer}.
+ */
 @WebListener("Registers the CSS and scripts in RegistryEE and HtmlRenderer.")
 public class PageGraph implements ServletContextListener {
 
@@ -53,11 +56,11 @@ public class PageGraph implements ServletContextListener {
     RegistryEE.Application.get(servletContext)
         .activate(RESOURCE_GROUP)// TODO: Activate as-needed
         .getGroup(RESOURCE_GROUP)
-        .styles
-        .add(
-            SEMANTICCMS_PAGEGRAPH,
-            SEMANTICCMS_PAGEGRAPH_PRINT
-        );
+            .styles
+            .add(
+                SEMANTICCMS_PAGEGRAPH,
+                SEMANTICCMS_PAGEGRAPH_PRINT
+            );
 
     HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
     htmlRenderer.addScript("d3", "/webjars/d3/" + URIEncoder.encodeURIComponent(Maven.d3Version) + "/dist/d3.min.js");
