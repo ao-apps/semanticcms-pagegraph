@@ -45,7 +45,7 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>SemanticCMS PageGraph²</name>
+  <name>SemanticCMS PageGraph</name>
   <url>https://semanticcms.com/pagegraph/</url>
   <description>SemanticCMS component to view a graph of the current page and related pages.</description>
   <inceptionYear>2016</inceptionYear>
