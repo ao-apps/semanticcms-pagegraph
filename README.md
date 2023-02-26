@@ -23,7 +23,7 @@
 * [Project Home](https://semanticcms.com/pagegraph/)
 * [Changelog](https://semanticcms.com/pagegraph/changelog)
 * [API Docs](https://semanticcms.com/pagegraph/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.semanticcms/semanticcms-pagegraph)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.semanticcms&q=a%3Asemanticcms-pagegraph)
 * [GitHub](https://github.com/ao-apps/semanticcms-pagegraph)
 
 ## Contact Us
