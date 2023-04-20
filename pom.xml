@@ -367,7 +367,7 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId><version>7.8.2</version>
+        <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId><version>7.8.4</version>
       </dependency>
       <dependency>
         <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
