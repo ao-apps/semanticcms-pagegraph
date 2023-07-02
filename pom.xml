@@ -342,7 +342,7 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
       </dependency>
       <!-- Runtime Direct -->
       <dependency>
-        <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId><version>7.8.4</version>
+        <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId><version>7.8.5</version>
       </dependency>
       <dependency>
         <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
