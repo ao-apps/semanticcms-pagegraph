@@ -41,6 +41,9 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
     <documented.artifactId>semanticcms-pagegraph</documented.artifactId>
     <documented.name>SemanticCMS PageGraph</documented.name>
     <documented.description>SemanticCMS component to view a graph of the current page and related pages.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
+/ <a target="${javadoc.target}" href="${project.url}">PageGraph</a>]]></javadoc.breadcrumbs>
+    
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
     <!-- SonarQube -->
