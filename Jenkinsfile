@@ -31,16 +31,16 @@ def upstreamProjects = [
   '../oss/collections', // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   '../oss/lang', // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   '../oss/net-types', // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
-  '../oss/taglib', // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
+  '../oss/taglib-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
   '../oss/web-resources/registry', // <groupId>com.aoapps</groupId><artifactId>ao-web-resources-registry</artifactId>
-  '../oss/web-resources/servlet', // <groupId>com.aoapps</groupId><artifactId>ao-web-resources-servlet</artifactId>
+  '../oss/web-resources/servlet-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-web-resources-servlet</artifactId>
   // No Jenkins: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
   'core/renderer-html', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId>
   'core/taglib', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
   // No Jenkins: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId>
 
   // Runtime Direct
-  '../oss/servlet-firewall/webjars', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
+  '../oss/servlet-firewall-javaee/webjars', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
   // No Jenkins: <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId>
   // No Jenkins: <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
   // No Jenkins: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId>
