@@ -40,7 +40,7 @@ def upstreamProjects = [
   'core/taglib', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
 
   // Runtime Direct
-  '../oss/servlet-firewall-javaee/webjars', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
+  '../oss/servlet-firewall/webjars', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
   // No Jenkins: <groupId>org.webjars.npm</groupId><artifactId>d3</artifactId>
   // No Jenkins: <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
   // No Jenkins: <groupId>org.glassfish.web</groupId><artifactId>jakarta.servlet.jsp.jstl</artifactId>
