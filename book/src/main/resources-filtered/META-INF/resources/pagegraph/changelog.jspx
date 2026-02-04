@@ -47,6 +47,7 @@ along with semanticcms-pagegraph.  If not, see <http://www.gnu.org/licenses />.
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
 			/>
+			<!-- TODO: Add time-since to nodes in news (43 minutes ago, days, weeks, ...), and maybe color code like GitHub blame -->
 		</c:if>
 
 		<changelog:release
