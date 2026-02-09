@@ -277,7 +277,7 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-subrequest</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId><version>6.0.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId><version>6.0.1-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-tempfiles</artifactId><version>3.1.0${POST-SNAPSHOT}</version>
@@ -327,7 +327,6 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
       <dependency>
         <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
       </dependency>
-      <!-- jakartaee-web-profile-bom: <groupId>org.glassfish.web</groupId><artifactId>jakarta.servlet.jsp.jstl</artifactId> -->
       <!-- Runtime Transitive -->
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-net-path-space</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
@@ -405,10 +404,6 @@ along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
     </dependency>
     <dependency>
       <groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.web</groupId><artifactId>jakarta.servlet.jsp.jstl</artifactId>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
