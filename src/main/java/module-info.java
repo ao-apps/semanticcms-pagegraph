@@ -21,7 +21,6 @@
  * along with semanticcms-pagegraph.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.semanticcms.pagegraph {
-  exports com.semanticcms.pagegraph;
   // Direct
   requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
@@ -33,4 +32,6 @@ module com.semanticcms.pagegraph {
   requires jakarta.servlet.jsp.jstl; // <groupId>jakarta.servlet.jsp.jstl</groupId><artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
+
+  exports com.semanticcms.pagegraph;
 }
